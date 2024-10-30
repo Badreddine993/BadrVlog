@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="masthead" style="background-image: url('{% if post.images.first %}{{ post.images.first.image.url }}{% endif %}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="post-heading">
+                    <h1>{{ post.title }}</h1>
+                    <span class="meta">Posted by {{ post.author }} on {{ post.publish_date|date:"M d, Y" }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<article class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                {% for section in post.sections.all %}
+                    <h2>{{ section.subtitle }}</h2>
+                    
+                    {% if section.image %}
+                        <div class="section-image">
+                            {% if section.image_url %}
+                                <a href="{{ section.image_url }}" target="_blank" rel="noopener noreferrer">
+                                    <img src="{{ section.image.url }}" alt="{{ section.subtitle }}" class="img-fluid">
+                                </a>
+                            {% else %}
+                                <img src="{{ section.image.url }}" alt="{{ section.subtitle }}" class="img-fluid">
+                            {% endif %}
+                            {% if section.image_title %}
+                                <span class="caption text-muted">{{ section.image_title }}</span>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                    
+                    <p>{{ section.content }}</p>
+                    
+                    {% if section.code %}
+                        <div class="code-section mt-4">
+                            <h3>Code Snippet</h3>
+                            <pre><code class="language-python">{{ section.code }}</code></pre>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</article>
+{% endblock %}

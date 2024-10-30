@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Post{% endblock %}
+{% block content %}
+    <body>
+        <!-- Navigation-->
+        {% include 'partials/header.html' %}
+        
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{% static 'assets/img/post.png' %}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>the self orgnazing map to optimize tragectory</h1>
+                            <h2 class="subheading">Unsupervised-Learning</h2>
+                            <span class="meta">
+                                Posted by
+                                <a href="#!">Boukfa Badreddine</a>
+                                on August 24, 2024
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>Never in all of human history have we been able to fully grasp the complexity of data organization. The self-organizing map (SOM), created by Teuvo Kohonen, offers a way to visualize high-dimensional data on a low-dimensional grid. SOM works by arranging similar data points close to one another, making it easier to identify patterns and trends in the data. This method of unsupervised learning reflects the natural order in which data relationships form clusters, ensuring that each data point is mapped to its closest neighbors.</p>
+                        <p>Much like the round earth concept, SOMs do not have a fixed center; rather, every node competes for representation of input data, with the relationships and distances between them forming naturally based on the input patterns.</p>
+                        <p>One of the key features of a SOM is that, over time, the map adapts and organizes itself, clustering similar data points together, making hidden patterns and structures in the data more evident.</p>
+                        <p>As we get deeper into machine learning, the importance of visualizing and understanding high-dimensional data becomes critical. SOM provides a practical tool, not just in theory but in practice, to reduce dimensionality and present data in a way that humans can interpret easily.</p>
+                        <h2 class="section-heading">The Final Frontier of Data Visualization</h2>
+                        <p>There can be no thought of finishing in the quest for data insights. Whether using SOMs to explore customer behaviors, neural responses, or other complex data sets, the thrill is in discovering relationships that were previously hidden.</p>
+                        <blockquote class="blockquote">The data of yesterday are the insights of today and the knowledge of tomorrow. Machine learning has yet to fully master the understanding of vast data sets, but techniques like SOM bring us closer.</blockquote>
+                        <p>Just as exploration of space continues, so too does the exploration of data. The self-organizing map is a stepping stone in the ongoing journey to make sense of the enormous amounts of information we generate each day.</p>
+                        <h2 class="section-heading">Reaching New Heights with SOM</h2>
+                        <p>As the self-organizing map learns and adapts to data, it highlights the most important features, leaving less significant data further out. This process of self-organization mirrors our own quest to understand the vastness of the unknown, whether it’s outer space or the inner workings of a complex data set.</p>
+                        <a href="#!"><img class="img-fluid" src="{% static 'assets/img/post.webp' %}" alt="..." /></a>
+                        <span class="caption text-muted">To explore data in ways never done before – that’s what using SOM is all about.</span>
+                        <p>The self-organizing map is a powerful tool for clustering and visualizing high-dimensional data, allowing us to see the structure of information in a way that no other method can provide. It is a tool for both discovery and understanding in the age of big data.</p>
+                        <p>Placeholder text by <a href="http://spaceipsum.com/">Boukfa Badreddine</a> &middot; Images by <a href="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*LAo29-7et3VXOEqwFR3x1g.png">NASA on The Commons</a></p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2023</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'js/scripts.js' %}"></script>
+    </body>
+{% endblock %}
