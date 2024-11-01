@@ -1146,3 +1146,11 @@ header.masthead .post-heading .meta a {
   overflow-x: auto;
   font-size: 0.9em;
 }
+.post-card-featured {
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+}
+.post-card-featured i {
+  margin-right: 5px; /* Adjust space between icon and text */
+}

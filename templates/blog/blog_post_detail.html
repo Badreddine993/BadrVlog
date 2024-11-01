@@ -20,30 +20,36 @@
             <div class="col-md-10 col-lg-8 col-xl-7">
                 {% for section in post.sections.all %}
                     <h2>{{ section.subtitle }}</h2>
-                    
-                    {% if section.image %}
-                        <div class="section-image">
-                            {% if section.image_url %}
-                                <a href="{{ section.image_url }}" target="_blank" rel="noopener noreferrer">
-                                    <img src="{{ section.image.url }}" alt="{{ section.subtitle }}" class="img-fluid">
-                                </a>
-                            {% else %}
-                                <img src="{{ section.image.url }}" alt="{{ section.subtitle }}" class="img-fluid">
-                            {% endif %}
-                            {% if section.image_title %}
-                                <span class="caption text-muted">{{ section.image_title }}</span>
-                            {% endif %}
-                        </div>
-                    {% endif %}
-                    
-                    <p>{{ section.content }}</p>
-                    
-                    {% if section.code %}
-                        <div class="code-section mt-4">
-                            <h3>Code Snippet</h3>
-                            <pre><code class="language-python">{{ section.code }}</code></pre>
-                        </div>
-                    {% endif %}
+
+                    {% for block in section.content_blocks.all %}
+                        {% if block.content_type == 'text' %}
+                            <p>{{ block.content }}</p>
+                        {% elif block.content_type == 'math' %}
+                            <div class="math-content">
+                                \[
+                                {{ block.content }}
+                                \]
+                            </div>
+                        {% elif block.content_type == 'code' %}
+                            <div class="code-section mt-4">
+                                <h3>Code Snippet</h3>
+                                <pre><code class="language-python">{{ block.code }}</code></pre>
+                            </div>
+                        {% elif block.content_type == 'image' %}
+                            <div class="section-image">
+                                {% if block.image_url %}
+                                    <a href="{{ block.image_url }}" target="_blank" rel="noopener noreferrer">
+                                        <img src="{{ block.image.url }}" alt="{{ block.image_title }}" class="img-fluid">
+                                    </a>
+                                {% else %}
+                                    <img src="{{ block.image.url }}" alt="{{ block.image_title }}" class="img-fluid">
+                                {% endif %}
+                                {% if block.image_title %}
+                                    <span class="caption text-muted">{{ block.image_title }}</span>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
                 {% endfor %}
             </div>
         </div>

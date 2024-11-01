@@ -8,7 +8,7 @@
                 {% if post.images.first %}
                     <img class="post-card-image" src="{{ post.images.first.image.url }}" alt="{{ post.images.first.alt_text }}" loading="lazy">
                 {% else %}
-                    <img class="post-card-image" src="{% static 'default.jpg' %}" alt="Default image" loading="lazy">
+                    <img class="post-card-image" src="{% static 'images/default.png' %}" alt="Default image" loading="lazy">
                 {% endif %}
             </a>
             <div class="post-card-content">
@@ -35,7 +35,7 @@
             {% if post.images.first %}
                 <img class="post-card-image" src="{{ post.images.first.image.url }}" alt="{{ post.images.first.alt_text }}" loading="lazy">
             {% else %}
-                <img class="post-card-image" src="{% static 'default.jpg' %}" alt="Default image" loading="lazy">
+                <img class="post-card-image" src="{% static 'images/default.png' %}" alt="Default image" loading="lazy">
             {% endif %}
             </a>
             <div class="post-card-content">
@@ -61,7 +61,7 @@
                 {% if post.images.first %}
                     <img class="post-card-image" src="{{ post.images.first.image.url }}" alt="{{ post.images.first.alt_text }}" loading="lazy">
                 {% else %}
-                    <img class="post-card-image" src="{% static 'default.jpg' %}" alt="Default image" loading="lazy">
+                    <img class="post-card-image" src="{% static 'images/default.png' %}" alt="Default image" loading="lazy">
                 {% endif %}
             </a>
             
@@ -71,7 +71,7 @@
                         <div class="post-card-tags">
                             <span class="post-card-primary-tag">{{ post.tag }}</span>
                             {% if post.featured %}
-                                <span class="post-card-featured">Featured</span>
+                                <span class="post-card-featured"><i class="fas fa-star"></i> Featured</span>
                             {% endif %}
                         </div>
                         <h2 class="post-card-title">{{ post.title }}</h2>
