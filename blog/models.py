@@ -37,6 +37,7 @@ class ContentBlock(models.Model):
     code = models.TextField(blank=True, null=True, help_text="Enter code snippet if content type is code.")
     image = models.ImageField(upload_to='blog_images/', blank=True, null=True, help_text="Upload an image if content type is image.")
     image_title = models.CharField(max_length=255, blank=True, null=True, help_text="Optional title for the image.")
+    image_url = models.URLField(blank=True, null=True, help_text="Enter URL for an external image if content type is image.")
 
     def __str__(self):
         return f"{self.get_content_type_display()} for Section {self.section.order}"

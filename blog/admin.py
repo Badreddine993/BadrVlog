@@ -4,7 +4,7 @@ from .models import BlogPost, BlogPostSection, BlogPostImage, ContentBlock
 class ContentBlockInline(admin.TabularInline):
     model = ContentBlock
     extra = 1
-    fields = ('content_type', 'content', 'code', 'image', 'image_title')  # Only relevant fields per content type
+    fields = ('content_type', 'content', 'code', 'image', 'image_title','image_url')  # Only relevant fields per content type
 
 class BlogPostSectionInline(admin.TabularInline):
     model = BlogPostSection

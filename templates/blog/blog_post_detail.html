@@ -23,7 +23,7 @@
 
                     {% for block in section.content_blocks.all %}
                         {% if block.content_type == 'text' %}
-                            <p>{{ block.content }}</p>
+                            <p class="justify-text">{{ block.content }}</p>
                         {% elif block.content_type == 'math' %}
                             <div class="math-content">
                                 \[
@@ -55,4 +55,9 @@
         </div>
     </div>
 </article>
+<style>
+    .justify-text {
+        text-align: justify;
+    }
+</style>
 {% endblock %}
